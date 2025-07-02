@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мастер-класс "Волшебный городок" | Компот</title>
+    <meta name="description" content="Художественный мастер-класс по рисованию акриловыми красками для детей от 7 лет">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+ :root {
+        --primary-color: #E09F12;
+        --secondary-color: #DA7502;
+        --background-color: #AAAA37;
+        --text-color: #FFFFFF;
+        --dark-text: #000000;
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: var(--background-color);
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+/* Единое меню для всех страниц */
+.menu {
+    background-color: var(--primary-color);
+    height: 80px;
+    border-radius: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu__logo {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.menu__logo:hover {
+    transform: scale(1.05);
+}
+
+.menu__list {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.menu__link:hover {
+    color: var(--dark-text);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu__link--current {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.menu__link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.menu__link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .menu__list {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+}
+    
+    /* Стили для мастер-класса */
+    .workshop {
+        background-color: var(--primary-color);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .workshop__image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .workshop__title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--text-color);
+    }
+    
+    .workshop__details {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin-bottom: 30px;
+    }
+    
+    .workshop__info {
+        background-color: var(--secondary-color);
+        border-radius: 15px;
+        padding: 20px;
+        width: 100%;
+        max-width: 800px;
+    }
+    
+    .workshop__info-item {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .workshop__info-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .workshop__button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .workshop__button:hover {
+        background-color: #c56802;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+        .menu {
+            flex-direction: column;
+            height: auto;
+            padding: 20px;
+        }
+        
+        .menu__list {
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .workshop {
+            padding: 20px;
+        }
+        
+        .workshop__title {
+            font-size: 1.5rem;
+        }
+        
+        .workshop__details, .workshop__info-item {
+            font-size: 1rem;
+        }
+    }
+     .footer {
+        background-color: var(--light-gray);
+        border-radius: 31px;
+        padding: 40px;
+        margin: 40px auto;
+        max-width: 947px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    
+    .footer__nav {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .footer__title {
+        font-size: 1.2rem;
+        color: var(--dark-text);
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    
+    .footer__links {
+        list-style-type: none;
+    }
+    
+    .footer__link {
+        display: block;
+        color: var(--dark-text);
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    
+    .footer__link:hover {
+        color: var(--secondary-color);
+    }
+    
+    .footer__info {
+        flex: 2;
+        min-width: 300px;
+        color: var(--dark-text);
+        font-size: 0.9rem;
+    }
+    
+    .footer__logo {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .footer__logo img {
+        max-width: 150px;
+        height: auto;
+    }
+
+     .credits {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+    
+    .credits img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <a href="https://compotomsk.github.io/55/"><img src="https://raw.githubusercontent.com/CompotOmsk/55/b47e870fc430c63545a35b59a281f0fcc7a06986/medeo/Rectangle%20(4)%201.svg" alt="Логотип Компот" class="menu__logo"></a>
+            <div class="menu__nav">
+                <ul class="menu__list">
+                    <li><a href="https://compotomsk.github.io/About1Us/" class="menu__link">о нас</a></li>
+                    <li><a href="/страницы/прадукты.html" class="menu__link">продукт</a></li>
+                    <li><a href="/страницы/события.html" class="menu__link">события</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Блок мастер-класса -->
+        <section class="workshop">
+            <img src="/medeo/3b4a6c21-5cc9-4010-b386-dfc0ecfd4b44.png" alt="Мастер-класс Волшебный городок" class="workshop__image">
+            
+            <h1 class="workshop__title">Мастер-класс "Волшебный городок"</h1>
+            
+            <div class="workshop__details">
+                Приглашаем детей от 7 лет на увлекательный художественный мастер-класс, 
+                где мы будем создавать волшебные городские пейзажи на холсте.
+            </div>
+            
+            <div class="workshop__info">
+                <div class="workshop__info-item">🎨 <strong>Техника:</strong> Рисуем акриловыми красками на холсте 20×30 см</div>
+                <div class="workshop__info-item">🖌️ <strong>Материалы:</strong> Все необходимые материалы предоставляются</div>
+                <div class="workshop__info-item">📅 <strong>Дата:</strong> 2 ноября в 11:30</div>
+                <div class="workshop__info-item">📍 <strong>Место:</strong> Детская студия Компот, Авиационная 143а</div>
+                <div class="workshop__info-item">💵 <strong>Стоимость:</strong> 700 руб. (предоплата 200 руб.)</div>
+            </div>
+            
+            <button class="workshop__button">Записаться на мастер-класс</button>
+        </section>
+    </div>
+                <footer class="footer">
+                <nav class="footer__nav">
+                    <h5 class="footer__title">Меню</h5>
+                    <ul class="footer__links">
+                        <li><a href="/" class="footer__link">Главная</a></li>
+                        <li><a href="/страницы/о_нас.html" class="footer__link">О нас</a></li>
+                        <li><a href="/страницы/прадукты.html" class="footer__link">Продукт</a></li>
+                        <li><a href="/страницы/события.html" class="footer__link">События</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="footer__info">
+                    <p>Иностранные языки. Репетиторство: начальная школа и подготовка к ОГЭ и ЕГЭ по всем предметам. 🎨 АРТ Студия. Творческие Мастер-классы. 🎹 Музыкальная Студия. Шахматный клуб «Сибирская шахматная школа». Арт-вечеринки. Летний языковой лагерь. Организация путешествий с детьми и взрослыми по России и зарубежом.</p>
+                </div>
+                
+                <div class="footer__logo">
+                    <img src="https://raw.githubusercontent.com/CompotOmsk/55/8c08481b5e55620d2d577158204697aa286837b2/medeo/Rectangle%20(4)%201.svg" alt="Логотип Компот" loading="lazy">
+                </div>
+            </footer>
+        </main>
+        
+        <div class="credits">
+            <img src="https://github.com/CompotOmsk/55/blob/main/Rectangle%209.png?raw=true" alt="Zoro Game" loading="lazy">
+            <p>Website created by Zoro Game</p>
+        </div>
+    </div>
+    
+</body>
+</html>
